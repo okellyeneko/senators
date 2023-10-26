@@ -53,13 +53,32 @@ function displayParty (data) { //creating function to display parties informatio
 }
 
 function allSenators(data) {
+  tablebody = document.getElementById('allsenators')
+  attributes = document.getElementById('attributes')
+  
   for (let i = 0; i < data.length; i++) {
-    const senator = data[i];  //Delcaring some constants to simplify 
-    firstname = senator.person.firstname
-    lastname = senator.person.lastname
-    const party = senator.party; 
-    const gender = senator.person.gender
-    const rank = senator.senator_rank
-    const state = senator.state
+    const senator = data[i]; 
+    //Delcaring some constants to simplify and storing in an object:
+    allAttributes = {
+      firstname: senator.person.firstname,
+      lastname: senator.person.lastname,
+      party: senator.party,
+      gender: senator.person.gender,
+      rank: senator.senator_rank,
+      state: senator.state  
+    }
+    
+    var row = document.createElement('tr') //New row
+
+    for (x in allAttributes){ //loop that iterates through all the attributes (x)
+       //for all attributes, create a td and textnode (which stores the attribute value)
+      var cell = document.createElement("td");
+      var cellText = document.createTextNode(allAttributes[x]);
+
+
+      //Append text to cell, cell to row, and row to tablebody
+      cell.appendChild(cellText)
+      row.appendChild(cell)
+    }
   }
 }

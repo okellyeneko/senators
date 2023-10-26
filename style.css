@@ -22,3 +22,9 @@ li {
   justify-content: space-evenly;
   flex-direction: row;
 }
+/* 
+#allsenatorsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
