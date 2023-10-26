@@ -6,6 +6,7 @@ async function getSenators() { //defining a async function to fetch data from th
   const alldata = await response.json(); 
   const senators = alldata.objects //Collecting all the data in variable senators
   displayParty(senators) //Calling displayParty and passing the data in params
+  allSenators(senators)
 }
   
 function displayParty (data) { //creating function to display parties information (step 1)
@@ -48,5 +49,17 @@ function displayParty (data) { //creating function to display parties informatio
     const count = partycounter[party]
     container.querySelector("h1").innerHTML = party;
     container.querySelector("p").innerHTML = `Number of members: ${count}`;
+  }
+}
+
+function allSenators(data) {
+  for (let i = 0; i < data.length; i++) {
+    const senator = data[i];  //Delcaring some constants to simplify 
+    firstname = senator.person.firstname
+    lastname = senator.person.lastname
+    const party = senator.party; 
+    const gender = senator.person.gender
+    const rank = senator.senator_rank
+    const state = senator.state
   }
 }
