@@ -6,7 +6,7 @@ async function getSenators() { //defining a async function to fetch data from th
   const alldata = await response.json(); 
   const senators = alldata.objects //Collecting all the data in variable senators
   displayParty(senators) //Calling displayParty and passing the data in params
-  allSenators(senators)
+  allSenators(senators) //Calling allSenators and passing the data in params
 }
   
 function displayParty (data) { //creating function to display parties information (step 1)
@@ -80,5 +80,6 @@ function allSenators(data) {
       cell.appendChild(cellText)
       row.appendChild(cell)
     }
+    tablebody.appendChild(row); // Appends the row to the table
   }
 }
