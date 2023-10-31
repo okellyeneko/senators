@@ -25,6 +25,7 @@
       <div id="indep">
         <h1></h1>
         <p class="numSen"></p>
+        <h2>Leaders of the party</h2>
         <ul id="indLeaders"></ul>
       </div>
     </div>
@@ -38,29 +39,21 @@
           <th>
             <select id="selectParty" onchange="filter()">
               <option value="">All(parties)</option>
-              <option value="Democrat">Democrat</option>
-              <option value="Republican">Republican</option>
             </select>
           </th>
           <th>
             <select id="selectGender" onchange="filter()">
               <option value="">All(genders)</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
             </select>
           </th>
           <th>
             <select id="selectRank" onchange="filter()">
               <option value="">All(ranks)</option>
-              <option value="Junior">Junior</option>
-              <option value="Senior">Senior</option>
             </select>
           </th>
           <th>
             <select id="selectState" onchange="filter()">
               <option value="">All(states)</option>
-              <option value="ID">ID</option>
-              <option value="OR">OR</option>
             </select>
           </th>
         </tr>
@@ -79,6 +72,15 @@
 
     </table>
   </section>
+  <section>
+    <div id="detailsDiv">
+      <h2>Senator Details</h2>
+      <div id="details">
+        <ul id="listofDetails"></ul>
+      </div>
+  </div>
+  </section>
 </body>
 <script src="./index.js"></script>
+
 </html>
