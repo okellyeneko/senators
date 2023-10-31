@@ -5,32 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Senators</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 <body>
-  <section>
+  <section id="LeadersParties">
+    <h1 class="titles">US Senators</h1>
     <div id="parties">
       <div id="reps">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party</h2>
+        <h2>Leaders of the party:</h2>
         <ul id="repLeaders"></ul>
       </div>
       <div id="dems">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party</h2>
+        <h2>Leaders of the party:</h2>
         <ul id="demLeaders"></ul>
       </div>
       <div id="indep">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party</h2>
+        <h2>Leaders of the party:</h2>
         <ul id="indLeaders"></ul>
       </div>
     </div>
   </section>
   <section id="allsenatorsSection">
+    <h1 class="titles">Filter Senators</h1>
     <table id="allsenatorsTable">
       <thead>
         <tr>
@@ -38,22 +42,22 @@
           <th></th>
           <th>
             <select id="selectParty" onchange="filter()">
-              <option value="">All(parties)</option>
+              <option value="">All (party)</option>
             </select>
           </th>
           <th>
             <select id="selectGender" onchange="filter()">
-              <option value="">All(genders)</option>
+              <option value="">All (gender)</option>
             </select>
           </th>
           <th>
             <select id="selectRank" onchange="filter()">
-              <option value="">All(ranks)</option>
+              <option value="">All (rank)</option>
             </select>
           </th>
           <th>
             <select id="selectState" onchange="filter()">
-              <option value="">All(states)</option>
+              <option value="">All (state)</option>
             </select>
           </th>
         </tr>
@@ -71,8 +75,9 @@
     </table>
     <p id="error"></p>
   </section>
-  <section>
+  <section id="detailsSection">
     <div id="detailsDiv">
+      <label for="checkInput" class="close-hamburger" onclick="closeDetails()"><i class="fas fa-times"></i></label>
       <div id="details">
         <h2>Senator Details</h2>
         <ul id="listofDetails"></ul>

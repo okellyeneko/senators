@@ -256,3 +256,8 @@ function displaySenatorDetails(senator) {
 
   detailsDiv.style.display = "block";
 }
+
+function closeDetails() {
+  const detailsDiv = document.getElementById("detailsDiv");
+  detailsDiv.style.display = "none";
+}
