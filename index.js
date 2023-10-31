@@ -79,7 +79,39 @@ function allSenators(data) {
       //Append text to cell, cell to row, and row to tablebody
       cell.appendChild(cellText)
       row.appendChild(cell)
+      tablebody.appendChild(row)
     }
     tablebody.appendChild(row); // Appends the row to the table
+  }
+}
+
+function filter() {
+
+  var selectParty = document.getElementById("selectParty");
+  var selectState = document.getElementById("selectState");
+  var selectGender = document.getElementById("selectGender");
+  var selectRank = document.getElementById("selectRank");
+
+  var partyFilter = selectParty.value.toUpperCase();
+  var stateFilter = selectState.value.toUpperCase();
+  var genderFilter = selectGender.value.toUpperCase();
+  var rankFilter = selectRank.value.toUpperCase();
+
+  var table = document.getElementById("allsenatorsTable");
+  var tr = table.getElementsByTagName("tr");
+
+  for (var i =1; i < tr.length; i++) {
+    td = tr[i].cells;
+
+    var tdinParty = td[2].innerText.toUpperCase();
+    var tdinGender = td[3].innerText.toUpperCase();
+    var tdinRank = td[4].innerText.toUpperCase();
+    var tdinState = td[5].innerText.toUpperCase();
+
+    if (tdinParty.indexOf(partyFilter) > -1 && tdinState.indexOf(stateFilter) > -1 && tdinGender.indexOf(genderFilter) > -1 && tdinRank.indexOf(rankFilter) > -1) {
+      tr[i].style.display = ""
+    } else {
+      tr[i].style.display = "none"
+    }
   }
 }

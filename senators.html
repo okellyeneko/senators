@@ -32,6 +32,38 @@
   <section id="allsenatorsSection">
     <table id="allsenatorsTable">
       <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>
+            <select id="selectParty" onchange="filter()">
+              <option value="">All(parties)</option>
+              <option value="Democrat">Democrat</option>
+              <option value="Republican">Republican</option>
+            </select>
+          </th>
+          <th>
+            <select id="selectGender" onchange="filter()">
+              <option value="">All(genders)</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </th>
+          <th>
+            <select id="selectRank" onchange="filter()">
+              <option value="">All(ranks)</option>
+              <option value="Junior">Junior</option>
+              <option value="Senior">Senior</option>
+            </select>
+          </th>
+          <th>
+            <select id="selectState" onchange="filter()">
+              <option value="">All(states)</option>
+              <option value="ID">ID</option>
+              <option value="OR">OR</option>
+            </select>
+          </th>
+        </tr>
         <tr id="attributes">
           <th>Firstname</th>
           <th>Lastname</th>
