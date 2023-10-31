@@ -232,8 +232,6 @@ function displaySenatorDetails(senator) {
   website.appendChild(websiteUrl);
 
 
-  // Add other details as needed...
-
   detailsList.appendChild(office);
   detailsList.appendChild(birthday);
   detailsList.appendChild(startdate);
@@ -241,6 +239,5 @@ function displaySenatorDetails(senator) {
   detailsList.appendChild(youtube);
   detailsList.appendChild(website);
 
-  // Show the details section
   detailsDiv.style.display = "block";
 }
