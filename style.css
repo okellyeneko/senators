@@ -22,17 +22,12 @@ li {
   justify-content: space-evenly;
   flex-direction: row;
 }
-/* 
-#allsenatorsSection {
+
+/* #allsenatorsSection {
   display: flex;
   flex-direction: column;
   align-items: center;
 } */
-
-#welcomeDiv {
-  background-color: red;
-  height: 500px;
-}
 
 tr {
   cursor: pointer;

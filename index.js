@@ -120,15 +120,19 @@ function filter(data) {
   var stateFilter = selectState.value.toUpperCase();
   var genderFilter = selectGender.value.toUpperCase();
   var rankFilter = selectRank.value.toUpperCase();
+  
 
   var table = document.getElementById("allsenatorsTable");
   var tr = table.getElementsByTagName("tr");
-
+  const error = document.getElementById('error');
+  allrows = tr.length - 2 // (-2 is because we only count the rows for the senators, not the headers)
+  hiddenRows = 0
   //Create a loop that iterates through all the table rows necessary (all except other headers)
 
   for (var i = 2; i < tr.length; i++) {
     //Inside the for loop, declare variables for all the different cells corrsponding to the attributes
     td = tr[i].cells;
+
 
     var tdinParty = td[2].innerText.toUpperCase();
     var tdinGender = td[3].innerText.toUpperCase();
@@ -146,10 +150,19 @@ function filter(data) {
       tr[i].style.display = ""
     } else {
       tr[i].style.display = "none"
+      hiddenRows += 1
     }
   }
 
-  //
+  //Checks if all rows have been displayed to none. If so, it displays an error message
+  if (allrows === hiddenRows) {
+    error.textContent = 'No match for these filters. Chnage them to get a result';
+    const detailsList = document.getElementById('listofDetails')
+    detailsList.innerHTML = "";
+  } else {
+    error.textContent = ""
+  }
+
   parties = []
   genders = []
   ranks = []
@@ -231,6 +244,8 @@ function displaySenatorDetails(senator) {
   websiteUrl.setAttribute('target', "_blank")
   website.appendChild(websiteUrl);
 
+
+  // Add other details as needed...
 
   detailsList.appendChild(office);
   detailsList.appendChild(birthday);
