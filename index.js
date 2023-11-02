@@ -1,5 +1,6 @@
 getSenators() //Function call of getSenators
 
+
 let senatorsData = [];
 
 async function getSenators() { //defining a async function to fetch data from the senators.json file
@@ -217,10 +218,14 @@ function filter(data) {
 }
 
 function displaySenatorDetails(senator) {
+
+  //function that displays all the details by appending the information to li elements that are then appended to the ul
   const detailsDiv = document.getElementById("detailsDiv");
   const detailsList = document.getElementById('listofDetails')
+  //Every time the function is run (row is clicked) the list is emptied to make place for relevant information
   detailsList.innerHTML = "";
   
+  //Getting all the data necessary in json 
   const office = document.createElement("li");
   office.textContent = `Office: ${senator.extra.office}`;
 
@@ -243,9 +248,6 @@ function displaySenatorDetails(senator) {
   websiteUrl.textContent = senator.website;
   websiteUrl.setAttribute('target', "_blank")
   website.appendChild(websiteUrl);
-
-
-  // Add other details as needed...
 
   detailsList.appendChild(office);
   detailsList.appendChild(birthday);
