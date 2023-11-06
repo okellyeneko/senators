@@ -1,8 +1,5 @@
 getSenators() //Function call of getSenators
 
-
-let senatorsData = [];
-
 async function getSenators() { //defining a async function to fetch data from the senators.json file
   const url = "senators.json"; 
   const response = await fetch(url); 
@@ -89,7 +86,7 @@ function allSenators(data) {
 
     //Delcaring some constants to simplify and storing in an object:
     allAttributes = {
-      firstname: senator.person.firstname.charAt(0).toUpperCase() + senator.person.firstname.slice(1),
+      firstname: senator.person.firstname.charAt(0).toUpperCase() + senator.person.firstname.slice(1), // Making it uppercase only for the first letter of the word
       lastname: senator.person.lastname.charAt(0).toUpperCase() + senator.person.lastname.slice(1),
       party: senator.party.charAt(0).toUpperCase() + senator.party.slice(1),
       gender: senator.person.gender.charAt(0).toUpperCase() + senator.person.gender.slice(1),
@@ -209,13 +206,13 @@ function filter(data) {
   }
   for (i in genders){
     var option = document.createElement("option");
-    var optionText = document.createTextNode(genders[i]);
+    var optionText = document.createTextNode(genders[i].charAt(0).toUpperCase() + genders[i].slice(1)); 
     option.appendChild(optionText)
     selectGender.appendChild(option)
   }
   for (i in ranks){
     var option = document.createElement("option");
-    var optionText = document.createTextNode(ranks[i]);
+    var optionText = document.createTextNode(ranks[i].charAt(0).toUpperCase() + ranks[i].slice(1));
     option.appendChild(optionText)
     selectRank.appendChild(option)
   }
@@ -254,10 +251,27 @@ function displaySenatorDetails(senator) {
   startdate.textContent = `Start date: ${senator.startdate}`;
 
   const twitter = document.createElement("li");
-  twitter.textContent = `Twitter: ${senator.person.twitterid}`;
+  const twitterIcon = document.createElement("i");
+  twitterIcon.classList.add("fa-brands", "fa-twitter");
+  twitter.appendChild(twitterIcon);
+
+  const twitterUrl = document.createElement("a");
+  twitterUrl.href = `https://twitter.com/${senator.person.twitterid} `;
+  twitterUrl.textContent = ` Twitter: ${senator.person.twitterid} `
+  twitterUrl.setAttribute('target', "_blank")
+  twitter.appendChild(twitterUrl);
   
   const youtube = document.createElement("li");
-  youtube.textContent = `Youtube: ${senator.person.youtubeid}`;
+  const youtubeIcon = document.createElement("i");
+  youtubeIcon.classList.add("fa-brands", "fa-youtube");
+  youtube.appendChild(youtubeIcon);
+
+  const youtubeUrl = document.createElement("a");
+  youtubeUrl.href = `https://www.youtube.com/@${senator.person.youtubeid} `;
+  youtubeUrl.textContent = ` Youtube: ${senator.person.youtubeid} `
+  youtubeUrl.setAttribute('target', "_blank")
+  youtube.appendChild(youtubeUrl);
+
 
   const website = document.createElement("li");
   website.textContent = "Website: "

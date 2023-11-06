@@ -3,16 +3,7 @@
   padding: 0;
 }
 
-#LeadersParties {
-  background-image: url(./senate.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+/* Basic html elements and classes */
 
 .titles {
   font-size: 60px;
@@ -22,13 +13,79 @@
   text-shadow: 3px 3px black;
   background-color: #002868c6;
   border-radius: 20px;
+}
 
+.blue {
+  background-color: #002868c6;
+}
+.red {
+  background-color: #bf0a31c6;
+}
+
+h1 {
+  font-size: 30px;
+}
+h2 {
+  font-size: 20px;
+  padding: 20px 0px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(177, 174, 174);
+}
+
+/* Section for leaders in each party and party counters */
+
+#LeadersParties {
+  background-image: url(./senate.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.numSen {
+  font-size: 20px;
+}
+
+#parties {
+  display: flex;
+  flex-direction: row;
+}
+#parties div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  color: white;
+  padding: 20px;
+  margin: 50px;
+}
+
+/* Table section  */
+
+#allsenatorsSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #allsenatorsTable {
+  margin: 20px;
+  display: block;
   overflow-x: auto;
   border-collapse: collapse;
-  margin: 70px 70px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -53,9 +110,6 @@
   background-color: #002868;
 }
 
-
-
-
 select {
   width: 100%;
   height: 100%;
@@ -67,45 +121,21 @@ select {
   height: 2em;
 }
 
-h1 {
-  font-size: 30px;
+@media screen and (max-width: 1900px) {
+  #parties {
+    flex-direction: column;
+  }
 }
-h2 {
-  font-size: 20px;
-  padding: 20px 0px;
+@media screen and (max-width: 1000px) {
+  #allsenatorsTable {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
 }
-
-li {
-  list-style: none;
-}
-
-.numSen {
-  font-size: 20px;
-}
-
-#parties {
-  display: flex;
-  flex-direction: row;
-}
-#parties div {
-  display: flex;
-  width: 500px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
-  color: white;
-  padding: 20px;
-  margin: 50px;
-}
-
-#allsenatorsSection {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-
+/* Details section  */
 
 #detailsDiv {
   display: none;
@@ -126,12 +156,6 @@ li {
   padding: 10px;
 }
 
-
-a {
-  text-decoration: none;
-  color: rgb(177, 174, 174);
-}
-
 .close-hamburger {
   cursor: pointer;
   top: 0px;
@@ -139,12 +163,4 @@ a {
   font-size: 1.5rem;
   border: 1px solid black;
   border-radius: 5%;
-}
-
-
-.blue {
-  background-color: #002868c6;
-}
-.red {
-  background-color: #bf0a31c6;
 }
