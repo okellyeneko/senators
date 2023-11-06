@@ -20,7 +20,7 @@
   margin: 20px;
   color: white;
   text-shadow: 3px 3px black;
-  background-color: rgba(0, 0, 0, 0.501);
+  background-color: #002868c6;
   border-radius: 20px;
 
 }
@@ -33,7 +33,7 @@
 }
 
 #allsenatorsTable thead tr {
-  background-color: brown;
+  background-color: #bf0a31;
   color: #ffffff;
   text-align: left;
   font-size: 20px;
@@ -45,12 +45,12 @@
 }
 
 #allsenatorsTable tbody tr{
-  background-color: rgb(138, 135, 135);
+  background-color: #002868c6;
   border: 1px solid black;
   cursor: pointer;
 }
 #allsenatorsTable tbody tr:hover {
-  background-color: rgb(73, 72, 72);
+  background-color: #002868;
 }
 
 
@@ -89,10 +89,10 @@ li {
 }
 #parties div {
   display: flex;
+  width: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.501);
   border-radius: 20px;
   color: white;
   padding: 20px;
@@ -114,10 +114,12 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: brown;
+  background-color: #002868c6;
   z-index: 1;
   padding: 30px;
   border-radius: 20px;
+  border: 2px solid white;
+  box-shadow: 3px 3px 6px 3px #ffffff;
 }
 
 #details ul li {
@@ -137,4 +139,12 @@ a {
   font-size: 1.5rem;
   border: 1px solid black;
   border-radius: 5%;
+}
+
+
+.blue {
+  background-color: #002868c6;
+}
+.red {
+  background-color: #bf0a31c6;
 }

@@ -13,22 +13,22 @@
   <section id="LeadersParties">
     <h1 class="titles">US Senators</h1>
     <div id="parties">
-      <div id="reps">
+      <div id="reps" class="red">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party:</h2>
+        <h2 id="partyHeaderRep"></h2>
         <ul id="repLeaders"></ul>
       </div>
-      <div id="dems">
+      <div id="dems" class="blue">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party:</h2>
+        <h2 id="partyHeaderDem"></h2>
         <ul id="demLeaders"></ul>
       </div>
-      <div id="indep">
+      <div id="indep" class="red">
         <h1></h1>
         <p class="numSen"></p>
-        <h2>Leaders of the party:</h2>
+        <h2 id="partyHeaderInd"></h2>
         <ul id="indLeaders"></ul>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <div id="detailsDiv">
       <label for="checkInput" class="close-hamburger" onclick="closeDetails()"><i class="fas fa-times"></i></label>
       <div id="details">
-        <h2>Senator Details</h2>
+        <h2 id="detailsNmae">Senator Details</h2>
         <ul id="listofDetails"></ul>
       </div>
   </div>

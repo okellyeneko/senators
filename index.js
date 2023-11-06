@@ -21,14 +21,17 @@ function displayParty (data) { //creating function to display parties informatio
     Republican: {
       partyDiv: document.getElementById('reps'),
       leadersList: document.getElementById('repLeaders'),
+      partyHeader: document.getElementById('partyHeaderRep')
     },
     Democrat: {
       partyDiv: document.getElementById('dems'),
       leadersList: document.getElementById('demLeaders'),
+      partyHeader: document.getElementById('partyHeaderDem')
     },
     Independent: {
       partyDiv: document.getElementById('indep'),
       leadersList: document.getElementById('indLeaders'),
+      partyHeader: document.getElementById('partyHeaderInd')
     },
   };
 
@@ -38,6 +41,7 @@ function displayParty (data) { //creating function to display parties informatio
 
     if (partycounter[party] === undefined ) { //Condition that checks if the current senators party is undefined in the partyounter object
       partycounter[party] = 0 //It it is, start a counter for that party at 0
+
     }
     partycounter[party] = partycounter[party] + 1 //For the current party being looped, add 1 to its counter
 
@@ -53,6 +57,9 @@ function displayParty (data) { //creating function to display parties informatio
   for (party in partycounter) { //for each party in partycounter, insert the name of the party and its counter in corresponding html elements
     const container = partiesObj[party].partyDiv
     const count = partycounter[party]
+    const header = partiesObj[party].partyHeader
+
+    header.textContent = "Leaders in the party: "
     container.querySelector("h1").innerHTML = party;
     container.querySelector("p").innerHTML = `Number of members: ${count}`;
 
@@ -82,13 +89,16 @@ function allSenators(data) {
 
     //Delcaring some constants to simplify and storing in an object:
     allAttributes = {
-      firstname: senator.person.firstname,
-      lastname: senator.person.lastname,
-      party: senator.party,
-      gender: senator.person.gender,
-      rank: senator.senator_rank,
-      state: senator.state  
+      firstname: senator.person.firstname.charAt(0).toUpperCase() + senator.person.firstname.slice(1),
+      lastname: senator.person.lastname.charAt(0).toUpperCase() + senator.person.lastname.slice(1),
+      party: senator.party.charAt(0).toUpperCase() + senator.party.slice(1),
+      gender: senator.person.gender.charAt(0).toUpperCase() + senator.person.gender.slice(1),
+      rank: senator.senator_rank.charAt(0).toUpperCase() + senator.senator_rank.slice(1),
+      state: senator.state.charAt(0).toUpperCase() + senator.state.slice(1)
     }
+
+
+    
     
     var row = document.createElement('tr') //New row
         // Add a click event handler to the row
@@ -222,10 +232,15 @@ function displaySenatorDetails(senator) {
   //function that displays all the details by appending the information to li elements that are then appended to the ul
   const detailsDiv = document.getElementById("detailsDiv");
   const detailsList = document.getElementById('listofDetails')
+  const detailsName = document.getElementById("detailsDiv");
   //Every time the function is run (row is clicked) the list is emptied to make place for relevant information
   detailsList.innerHTML = "";
   
   //Getting all the data necessary in json 
+
+  const party = senator.party; 
+
+
   const office = document.createElement("li");
   office.textContent = `Office: ${senator.extra.office}`;
 
@@ -257,6 +272,13 @@ function displaySenatorDetails(senator) {
   detailsList.appendChild(website);
 
   detailsDiv.style.display = "block";
+
+  if (party == "Republican") {
+    detailsDiv.style.backgroundColor = "#bf0a31"
+  }
+  else {
+    detailsDiv.style.backgroundColor = "#002868"
+  }
 }
 
 function closeDetails() {
