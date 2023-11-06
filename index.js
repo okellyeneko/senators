@@ -232,14 +232,17 @@ function displaySenatorDetails(senator) {
   //function that displays all the details by appending the information to li elements that are then appended to the ul
   const detailsDiv = document.getElementById("detailsDiv");
   const detailsList = document.getElementById('listofDetails')
-  const detailsName = document.getElementById("detailsDiv");
+  const detailsName = document.getElementById("detailsName");
   //Every time the function is run (row is clicked) the list is emptied to make place for relevant information
   detailsList.innerHTML = "";
   
   //Getting all the data necessary in json 
 
   const party = senator.party; 
+  const firstname =  senator.person.firstname.charAt(0).toUpperCase() + senator.person.firstname.slice(1)
+  const lastname =  senator.person.lastname.charAt(0).toUpperCase() + senator.person.lastname.slice(1)
 
+  detailsName.textContent = `${firstname} ${lastname}'s details:`
 
   const office = document.createElement("li");
   office.textContent = `Office: ${senator.extra.office}`;
