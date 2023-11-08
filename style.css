@@ -63,6 +63,7 @@ a {
 }
 #parties div {
   display: flex;
+  width: 500px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -133,6 +134,9 @@ select {
     overflow-x: auto;
     border-collapse: collapse;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  #parties div {
+    max-width: 300px;
   }
 }
 /* Details section  */
