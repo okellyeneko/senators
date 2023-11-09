@@ -1,6 +1,6 @@
 getSenators() //Function call of getSenators
 
-async function getSenators() { //defining a async function to fetch data from the senators.json file
+async function getSenators() { //defining an async function to fetch data from the senators.json file
   const url = "senators.json"; 
   const response = await fetch(url); 
   const alldata = await response.json(); 
@@ -8,7 +8,6 @@ async function getSenators() { //defining a async function to fetch data from th
   displayParty(senators) //Calling displayParty and passing the data in params
   allSenators(senators) //Calling allSenators and passing the data in params
   filter(senators)
-  clickSenator(senators)
 }
   
 function displayParty (data) { //creating function to display parties information (step 1)
@@ -299,6 +298,7 @@ function displaySenatorDetails(senator) {
 }
 
 function closeDetails() {
+  //Function to close the details on click
   const detailsDiv = document.getElementById("detailsDiv");
   detailsDiv.style.display = "none";
 }
