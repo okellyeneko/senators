@@ -1,6 +1,8 @@
 # senators
 
-How to run the program:
+How to view/run the program:
+
+-View the website hosted on Github: https://okellyeneko.github.io/senators/
 
 -To run the program, the user can open the folder on an IDE, and then open the index.html file using live-server.
 
