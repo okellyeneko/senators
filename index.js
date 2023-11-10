@@ -170,17 +170,21 @@ function filter(data) {
     error.textContent = ""
   }
 
-  parties = []
+  //This part of the code populates the filters with the right info
+
+  parties = [] //Create empty lists
   genders = []
   ranks = []
   states = []
   for (let i = 0; i < data.length; i++) {
+    //declare variables
     const senator = data[i];
     const party = senator.party;
     const gender = senator.person.gender;
     const rank = senator.senator_rank;
     const state = senator.state;
     
+    //if it is not in the list already, append it.
     if (!parties.includes(party)) {
       parties.push(party);
     }
@@ -197,6 +201,7 @@ function filter(data) {
         states.push(state);
     }
   }
+//Create a new option for each element in the lists and ppaend to the dropdown
   for (i in parties){
     var option = document.createElement("option");
     var optionText = document.createTextNode(parties[i]);
@@ -237,6 +242,8 @@ function displaySenatorDetails(senator) {
   const party = senator.party; 
   const firstname =  senator.person.firstname.charAt(0).toUpperCase() + senator.person.firstname.slice(1)
   const lastname =  senator.person.lastname.charAt(0).toUpperCase() + senator.person.lastname.slice(1)
+
+  //Creating elements to display the proper data
 
   detailsName.textContent = `${firstname} ${lastname}'s details:`
 
@@ -290,6 +297,7 @@ function displaySenatorDetails(senator) {
   detailsDiv.style.display = "block";
 
   if (party == "Republican") {
+    //changing the backgorund colors of the details depending on the party name (Democrat / Independent is blue)
     detailsDiv.style.backgroundColor = "#bf0a31"
   }
   else {
@@ -298,7 +306,7 @@ function displaySenatorDetails(senator) {
 }
 
 function closeDetails() {
-  //Function to close the details on click
+  //Function to close the details on click (called in html file)
   const detailsDiv = document.getElementById("detailsDiv");
   detailsDiv.style.display = "none";
 }
