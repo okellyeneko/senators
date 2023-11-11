@@ -115,6 +115,7 @@ function allSenators(data) {
 }
 
 function filter(data) {
+  // https://www.w3schools.com/howto/howto_js_filter_table.asp (Logic behind this function)
   //Function that iterats through the table rows and displays rows according to the selected filters
   //Declare all variables: 
 
